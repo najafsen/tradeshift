@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tradeshift/tradeshift-ui": "^11.0.3",
+    "@types/core-decorators": "^0.20.0",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.7",
     "@types/react": "^16.7.6",
     "@types/react-dom": "^16.0.9",
+    "core-decorators": "^0.20.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",

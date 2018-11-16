@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Header from "./components/Header";
+import Main from "./components/Main";
+import MainContent from "./components/MainContent";
+import Panel from "./components/Panel";
+import Triangle from "./pages/triangle/Triangle";
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <React.Fragment>
+                <Header/>
+                <Panel>
+                    <Main>
+                        <MainContent>
+                            <Triangle/>
+                        </MainContent>
+                    </Main>
+                </Panel>
+            </React.Fragment>
+        );
+    }
 }
 
 export default App;
