@@ -7,6 +7,10 @@ export enum TriangleType {
 }
 
 function triangleType(edgeA: number, edgeB: number, edgeC: number) {
+    if (isNaN(edgeA) || isNaN(edgeB) || isNaN(edgeC)) {
+        return TriangleType.InvalidInputs;
+    }
+
     if (edgeA <= 0 || edgeB <= 0 || edgeC <= 0) {
         return TriangleType.InvalidInputs;
     }

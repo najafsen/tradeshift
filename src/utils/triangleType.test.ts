@@ -1,6 +1,18 @@
 import triangleType, {TriangleType} from "./triangleType";
 
 describe('triangleType', () => {
+    it('Should return InvalidInput when giving edgeA NaN', () => {
+        expect(triangleType(NaN, 1, 1)).toBe(TriangleType.InvalidInputs);
+    });
+
+    it('Should return InvalidInput when giving edgeB NaN', () => {
+        expect(triangleType(1, NaN, 1)).toBe(TriangleType.InvalidInputs);
+    });
+
+    it('Should return InvalidInput when giving edgeC NaN', () => {
+        expect(triangleType(1, 4, NaN)).toBe(TriangleType.InvalidInputs);
+    });
+
     it('Should return InvalidInput when giving edgeA <= 0', () => {
         expect(triangleType(0, 1, 1)).toBe(TriangleType.InvalidInputs);
     });
