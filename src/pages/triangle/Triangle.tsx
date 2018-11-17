@@ -1,15 +1,14 @@
 import {autobind} from "core-decorators";
 import * as React from "react";
-import {ChangeEvent} from "react";
-import Form from "../../components/Form";
+import {default as triangleType, TriangleType} from "../../utils/triangleType";
+import TriangleForm from "./TriangleForm";
+import TriangleResult from "./TriangleResult";
 
 interface Props {
 }
 
 interface State {
-    numberA: string;
-    numberB: string;
-    numberC: string;
+    triangleType: TriangleType;
 }
 
 class Triangle extends React.Component<Props, State> {
@@ -17,54 +16,25 @@ class Triangle extends React.Component<Props, State> {
         super(props);
 
         this.state = {
-            numberA: '',
-            numberB: '',
-            numberC: '',
+            triangleType: TriangleType.InvalidInputs,
         }
     }
 
 
     render(): React.ReactNode {
-        const {numberA, numberB, numberC} = this.state;
+        const {triangleType} = this.state;
 
         return (
-            <Form>
-                <input type="number" value={numberA} onChange={this.handleNumberAChange} min={0}/>
-                <input type="number" value={numberB} onChange={this.handleNumberBChange} min={0}/>
-                <input type="number" value={numberC} onChange={this.handleNumberCChange} min={0}/>
-            </Form>
+            <div>
+                <TriangleForm onEdgeChange={this.calcTriangleType}/>
+                <TriangleResult triangleType={triangleType}/>
+            </div>
         );
     }
 
     @autobind
-    handleNumberAChange(event: ChangeEvent<HTMLInputElement>) {
-        if (this.isEmptyOrNumber(event.target.value)) {
-            this.setState({numberA: event.target.value});
-        }
-    }
-
-    @autobind
-    handleNumberBChange(event: ChangeEvent<HTMLInputElement>) {
-        if (this.isEmptyOrNumber(event.target.value)) {
-            this.setState({numberB: event.target.value});
-        }
-    }
-
-    @autobind
-    handleNumberCChange(event: ChangeEvent<HTMLInputElement>) {
-        if (this.isEmptyOrNumber(event.target.value)) {
-            this.setState({numberC: event.target.value});
-        }
-    }
-
-
-    // TODO handle `-`
-    isEmptyOrNumber(value: string): boolean {
-        if (value === '') {
-            return true;
-        }
-
-        return !isNaN(parseFloat(value));
+    calcTriangleType(edgeA: number, edgeB: number, edgeC: number) {
+        this.setState({triangleType: triangleType(edgeA, edgeB, edgeC)});
     }
 }
 

@@ -1,0 +1,1 @@
+export type Partial<T> = Pick<T, keyof T>;
