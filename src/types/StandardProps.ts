@@ -1,3 +1,3 @@
 export interface StandardProps {
-    className?: 'string';
+    className?: string;
 }

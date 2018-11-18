@@ -2,6 +2,7 @@ import {autobind} from 'core-decorators';
 import * as React from 'react';
 import {ChangeEvent} from 'react';
 import Form from '../../components/Form';
+import Input from '../../components/Input';
 import {Partial} from '../../types/Partial';
 
 interface Props {
@@ -31,9 +32,9 @@ class TriangleForm extends React.Component<Props, State> {
 
         return (
             <Form>
-                <input type="number" name="edgeA" value={edgeA} onChange={this.handleEdgeChange} min={0}/>
-                <input type="number" name="edgeB" value={edgeB} onChange={this.handleEdgeChange} min={0}/>
-                <input type="number" name="edgeC" value={edgeC} onChange={this.handleEdgeChange} min={0}/>
+                <Input label="Edge A length" type="number" name="edgeA" value={edgeA} onChange={this.handleEdgeChange} min={0}/>
+                <Input label="Edge B length" type="number" name="edgeB" value={edgeB} onChange={this.handleEdgeChange} min={0}/>
+                <Input label="Edge C length" type="number" name="edgeC" value={edgeC} onChange={this.handleEdgeChange} min={0}/>
             </Form>
         );
     }

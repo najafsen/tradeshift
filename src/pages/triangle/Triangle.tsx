@@ -1,6 +1,7 @@
 import {autobind} from 'core-decorators';
 import * as React from 'react';
 import {default as triangleType, TriangleType} from '../../utils/triangleType';
+import './Triangle.css';
 import TriangleForm from './TriangleForm';
 import TriangleResult from './TriangleResult';
 
@@ -25,9 +26,13 @@ class Triangle extends React.Component<Props, State> {
         const {triangleType} = this.state;
 
         return (
-            <div>
-                <TriangleForm onEdgeChange={this.calcTriangleType}/>
-                <TriangleResult triangleType={triangleType}/>
+            <div className="triangle-container">
+                <div className="triangle-box">
+                    <TriangleForm onEdgeChange={this.calcTriangleType}/>
+                </div>
+                <div className="triangle-box triangle-result-box">
+                    <TriangleResult triangleType={triangleType}/>
+                </div>
             </div>
         );
     }
