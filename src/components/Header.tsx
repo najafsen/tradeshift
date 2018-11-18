@@ -1,7 +1,6 @@
-import React from 'react';
-import {StandardProps} from '../types/StandardProps';
+import React, {DetailedHTMLProps} from 'react';
 
-interface Props extends StandardProps {
+interface Props extends DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
 }
 
 const Header: React.FunctionComponent<Props> = (props) => {
