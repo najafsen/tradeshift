@@ -1,5 +1,5 @@
 import React from 'react';
-import {StandardProps} from "../types/StandardProps";
+import {StandardProps} from '../types/StandardProps';
 
 interface Props extends StandardProps {
 }

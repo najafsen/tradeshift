@@ -1,4 +1,4 @@
-import triangleType, {TriangleType} from "./triangleType";
+import triangleType, {TriangleType} from './triangleType';
 
 describe('triangleType', () => {
     it('Should return InvalidInput when giving edgeA NaN', () => {

@@ -1,8 +1,8 @@
-import {autobind} from "core-decorators";
-import * as React from "react";
-import {default as triangleType, TriangleType} from "../../utils/triangleType";
-import TriangleForm from "./TriangleForm";
-import TriangleResult from "./TriangleResult";
+import {autobind} from 'core-decorators';
+import * as React from 'react';
+import {default as triangleType, TriangleType} from '../../utils/triangleType';
+import TriangleForm from './TriangleForm';
+import TriangleResult from './TriangleResult';
 
 interface Props {
 }

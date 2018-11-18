@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import Header from "./components/Header";
-import Main from "./components/Main";
-import MainContent from "./components/MainContent";
-import Panel from "./components/Panel";
-import Triangle from "./pages/triangle/Triangle";
+import Header from './components/Header';
+import Main from './components/Main';
+import MainContent from './components/MainContent';
+import Panel from './components/Panel';
+import Triangle from './pages/triangle/Triangle';
 
 
 class App extends Component {

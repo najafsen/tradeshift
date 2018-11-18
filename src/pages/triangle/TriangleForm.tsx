@@ -1,8 +1,8 @@
-import {autobind} from "core-decorators";
-import * as React from "react";
-import {ChangeEvent} from "react";
-import Form from "../../components/Form";
-import {Partial} from "../../types/Partial";
+import {autobind} from 'core-decorators';
+import * as React from 'react';
+import {ChangeEvent} from 'react';
+import Form from '../../components/Form';
+import {Partial} from '../../types/Partial';
 
 interface Props {
     onEdgeChange: (a: number, b: number, c: number) => void

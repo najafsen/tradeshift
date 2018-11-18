@@ -1,5 +1,5 @@
-import * as React from "react";
-import {TriangleType} from "../../utils/triangleType";
+import * as React from 'react';
+import {TriangleType} from '../../utils/triangleType';
 
 interface Props {
     triangleType: TriangleType;
