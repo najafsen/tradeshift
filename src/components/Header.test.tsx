@@ -6,16 +6,18 @@ describe('Header', () => {
     it('Should render a simple ts header correctly', () => {
         const header = shallow(<Header/>);
 
-        expect(header.find('header').length).toBe(1);
-        expect(header.props()['data-ts']).toBe('TopBar');
+        expect(header.html()).toBe('<header data-ts="TopBar"></header>');
     });
 
     it('Should render a simple ts header with some props correctly', () => {
         const header = shallow(<Header className="test" title="tradeshift"/>);
 
-        expect(header.find('header').length).toBe(1);
-        expect(header.props()['data-ts']).toBe('TopBar');
-        expect(header.props()['title']).toBe('tradeshift');
-        expect(header.hasClass('test')).toBe(true);
+        expect(header.html()).toBe('<header data-ts="TopBar" class="test" title="tradeshift"></header>');
+    });
+
+    it('Should render a simple ts header with children correctly', () => {
+        const header = shallow(<Header><a href="https://tradeshift.com/">Tradeshift</a></Header>);
+
+        expect(header.find('a')).toHaveLength(1);
     });
 });

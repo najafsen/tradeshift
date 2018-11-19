@@ -20,4 +20,10 @@ describe('Panel', () => {
 
         expect(panel.html()).toBe('<div data-ts="Panel" data-ts.label="tradeshift" class="ts" title="tradeshift"></div>');
     });
+
+    it('Should render a simple ts panel with label and some div props correctly', () => {
+        const panel = shallow(<Panel label="tradeshift"><h1>Tradeshift</h1></Panel>);
+
+        expect(panel.find('h1')).toHaveLength(1);
+    });
 });

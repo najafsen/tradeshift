@@ -1,22 +1,23 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 import Form from './Form';
+import Input from './Input';
 
 describe('Form', () => {
     it('Should render a simple ts form correctly', () => {
         const form = shallow(<Form/>);
-
-        expect(form.find('form').length).toBe(1);
-        expect(form.props()['data-ts']).toBe('Form');
-        expect(form.props()['target']).toBeUndefined();
+        expect(form.html()).toBe('<form data-ts="Form"></form>');
     });
 
     it('Should render a simple ts form with some props correctly', () => {
         const form = shallow(<Form target="_blank" className="test"/>);
 
-        expect(form.find('form').length).toBe(1);
-        expect(form.props()['data-ts']).toBe('Form');
-        expect(form.props()['target']).toBe('_blank');
-        expect(form.hasClass('test')).toBe(true);
+        expect(form.html()).toBe('<form data-ts="Form" target="_blank" class="test"></form>');
+    });
+
+    it('Should render a simple ts form with children correctly', () => {
+        const form = shallow(<Form target="_blank" className="test"><Input name="tradeshift"/></Form>);
+
+        expect(form.find('Input')).toHaveLength(1);
     });
 });

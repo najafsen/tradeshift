@@ -9,11 +9,11 @@ describe('TriangleForm', () => {
 
         expect(triangle.state()).toEqual({edgeA: '', edgeB: '', edgeC: ''});
 
-        expect(mockChangeHandler.mock.calls.length).toBe(0);
+        expect(mockChangeHandler.mock.calls).toHaveLength(0);
 
         const inputs = triangle.find('input');
 
-        expect(inputs.length).toBe(3);
+        expect(inputs).toHaveLength(3);
 
         inputs.at(0).simulate('change', {target: {name: 'edgeA', value: '12'}});
         expect(triangle.state()).toEqual({edgeA: '12', edgeB: '', edgeC: ''});
@@ -29,8 +29,6 @@ describe('TriangleForm', () => {
         expect(triangle.state()).toEqual({edgeA: '12', edgeB: 12.5, edgeC: 'invalid_string'});
         expect(mockChangeHandler).toHaveBeenLastCalledWith(12, 12.5, NaN);
 
-        expect(mockChangeHandler.mock.calls.length).toBe(3);
-
-        triangle.unmount();
+        expect(mockChangeHandler.mock.calls).toHaveLength(3);
     });
 });
