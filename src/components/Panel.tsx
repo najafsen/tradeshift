@@ -6,7 +6,7 @@ interface Props extends DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, 
 
 const Panel: React.FunctionComponent<Props> = (props) => {
     const {label, children, ...restProps} = props;
-    const tsProps = {'data-ts.label': label || ''};
+    const tsProps = {'data-ts.label': label};
 
     return (
         <div data-ts="Panel" {...tsProps} {...restProps}>

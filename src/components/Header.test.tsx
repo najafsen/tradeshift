@@ -3,13 +3,13 @@ import React from 'react';
 import Header from './Header';
 
 describe('Header', () => {
-    it('Should render a simple ts header correctly', () => {
+    it('Should render a simple ts header only having `data-ts="TopBar"`', () => {
         const header = shallow(<Header/>);
 
         expect(header.html()).toBe('<header data-ts="TopBar"></header>');
     });
 
-    it('Should render a simple ts header with some props correctly', () => {
+    it('Should render a simple ts header only having `data-ts="TopBar"` and given props', () => {
         const header = shallow(<Header className="test" title="tradeshift"/>);
 
         expect(header.html()).toBe('<header data-ts="TopBar" class="test" title="tradeshift"></header>');
